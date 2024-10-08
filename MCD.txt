@@ -1,0 +1,32 @@
+# mcd de dos números utilizando el algoritmo de Euclides
+def mcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+# Función que pide al usuario 4 números y calcula el MCD de los cuatro
+def calcular_mcd_de_cuatro():
+    # Pedimos los números uno por uno
+    a = int(input("Introduce el primer número: "))
+    b = int(input("Introduce el segundo número: "))
+    
+    # Calculamos el MCD de los dos primeros números
+    resultado = mcd(a, b)
+    print(f"MCD de {a} y {b} es: {resultado}")
+    
+    # Pedimos el tercer número
+    c = int(input("Introduce el tercer número: "))
+    resultado = mcd(resultado, c)
+    print(f"MCD de {a}, {b}, y {c} es: {resultado}")
+    
+    # Pedimos el cuarto número
+    d = int(input("Introduce el cuarto número: "))
+    resultado = mcd(resultado, d)
+    
+    # Mostramos el resultado final
+    print(f"MCD de {a}, {b}, {c}, y {d} es: {resultado}")
+
+# Llamamos a la función interactiva
+if __name__ == "__main__":
+    calcular_mcd_de_cuatro()
+
